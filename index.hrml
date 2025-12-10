@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Protocolo Calistenia Elite: O método definitivo de treino com peso do corpo.">
+    <title>Calistenia Elite | O Método Definitivo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        /* --- SYSTEM --- */
+        :root {
+            --bg-main: #050505;
+            --bg-card: #111111;
+            --accent: #FF3D00; /* Laranja Impacto */
+            --accent-hover: #D63300;
+            --text-white: #FFFFFF;
+            --text-gray: #A0A0A0;
+            --success: #00C853;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-white);
+            overflow-x: hidden;
+            line-height: 1.5;
+            padding-bottom: 80px; /* Espaço Mobile CTA */
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: var(--text-white);
+        }
+
+        .highlight { color: var(--accent); }
+
+        /* --- LAYOUT UTILS --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section { padding: 80px 0; }
+
+        /* --- BUTTONS --- */
+        .btn-main {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--accent);
+            color: #FFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            padding: 20px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 61, 0, 0.3);
+            border: 1px solid transparent;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .btn-main:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(255, 61, 0, 0.5);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: radial-gradient(circle at center, rgba(20,20,20,0.8) 0%, rgba(5,5,5,1) 100%),
+                        url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #CCC;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* --- ICON BOXES (AUTHORITY) --- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #222;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 61, 0, 0.1);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .feature-card p { color: var(--text-gray); font-size: 0.95rem; }
+
+        /* --- THE SYSTEM --- */
+        .system-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 100px;
+        }
+
+        .system-text { flex: 1; }
+        .system-img { 
+            flex: 1; 
+            height: 400px; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        
+        .system-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .check-list li {
+            list-style: none;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            color: #DDD;
+        }
+        .check-list li i { 
+            color: var(--accent); 
+            margin-right: 15px; 
+            font-size: 1.4rem;
+        }
+
+        /* --- PRICE ANCHOR --- */
+        .offer-section {
+            background: linear-gradient(180deg, #050505 0%, #150500 100%);
+            text-align: center;
+            border-top: 1px solid #111;
+        }
+
+        .price-box {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 60px 40px;
+            max-width: 900px;
+            margin: 50px auto;
+        }
+
+        .comparison-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .comp-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 12px;
+            background: #0A0A0A;
+            border: 1px solid #222;
+            min-width: 260px;
+            flex: 1;
+        }
+
+        .comp-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .price-big { font-size: 4rem; color: var(--text-white); font-weight: 900; line-height: 1; }
+        .price-sub { color: var(--text-gray); font-size: 1rem; margin-bottom: 10px; }
+
+        /* --- STICKY CTA --- */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 16px;
+            background: rgba(5,5,5,0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: center;
+            z-index: 100;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        .sticky-bar.visible { transform: translateY(0); }
+        .sticky-bar .btn-main { padding: 15px 30px; font-size: 1rem; margin: 0; max-width: 100%; }
+
+        /* --- ANIMATIONS --- */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: 0.6s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero-content h1 { font-size: 3rem; }
+            .system-row { flex-direction: column; gap: 30px; }
+            .system-img { width: 100%; height: 300px; order: -1; } /* Imagem em cima no mobile */
+            .comparison-flex { flex-direction: column; }
+            .comp-item { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container hero-content fade-up">
+            <h3><i class="ri-shield-star-line"></i> Método Calistenia Elite</h3>
+            <h1>O CORPO QUE VOCÊ QUER <br>NÃO ESTÁ NA ACADEMIA.<br><span class="highlight">ESTÁ NA SUA DISCIPLINA.</span></h1>
+            <p>Esqueça máquinas. Esqueça mensalidades. Aprenda a usar a gravidade para forjar um corpo forte, atlético e funcional. <strong>100% Em Casa.</strong></p>
+            <a href="#offer" class="btn-main"><i class="ri-fire-fill"></i> QUERO ENTRAR PARA A ELITE</a>
+            <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.6;"><i class="ri-lock-2-line" style="vertical-align: middle;"></i> Acesso Vitalício | Risco Zero</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center fade-up" style="margin-bottom: 60px;">EU NÃO VENDO SONHOS.<br>EU VENDO <span class="highlight">BIOMECÂNICA</span>.</h2>
+            
+            <div class="grid-3">
+                <div class="feature-card fade-up">
+                    <div class="icon-circle"><i class="ri-flashlight-fill"></i></div>
+                    <h3>Hipertrofia Real</h3>
+                    <p>Fibras musculares densas e reais. Um físico que funciona na prática, tem força bruta e estética atlética.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="icon-circle"><i class="ri-home-5-fill"></i></div>
+                    <h3>Liberdade Absoluta</h3>
+                    <p>Sua casa é o seu centro de treinamento. Se você tem chão e parede, você tem tudo. Fim das desculpas.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="icon-circle"><i class="ri-heart-pulse-fill"></i></div>
+                    <h3>Articulações de Aço</h3>
+                    <p>A calistenia cura e fortalece tendões, te preparando para envelhecer com mobilidade e sem dores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="system-row fade-up">
+                <div class="system-text">
+                    <h2 style="margin-bottom: 20px;">DOMÍNIO TOTAL DO CORPO</h2>
+                    <p style="margin-bottom: 30px; color: #AAA;">Você vai aprender a controlar seu peso em todos os ângulos. Do básico ao avançado, sem nenhum equipamento.</p>
+                    <ul class="check-list">
+                        <li><i class="ri-checkbox-circle-fill"></i> Braços e Peitoral Desenhados</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Costas em V (Tração)</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Pernas Potentes (Pistol Squats)</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Core Blindado</li>
+                    </ul>
+                </div>
+                <div class="system-img">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Treino em Casa">
+                </div>
+            </div>
+
+            <div class="system-row fade-up" style="flex-direction: row-reverse;">
+                <div class="system-text">
+                    <h2 style="margin-bottom: 20px;">ACELERADOR METABÓLICO</h2>
+                    <p style="margin-bottom: 30px; color: #AAA;">A Calistenia constrói o músculo, nosso protocolo de <strong>Corrida & HIIT</strong> derrete a gordura.</p>
+                    <ul class="check-list">
+                        <li><i class="ri-run-line"></i> Protocolos de Corrida de Rua</li>
+                        <li><i class="ri-timer-flash-line"></i> HIIT na sala de estar</li>
+                        <li><i class="ri-lungs-line"></i> Aumente seu fôlego em 200%</li>
+                        <li><i class="ri-fire-line"></i> Queima de gordura pós-treino</li>
+                    </ul>
+                </div>
+                <div class="system-img">
+                    <img src="https://images.unsplash.com/photo-1552674605-5d226a5be380?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Corrida">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section offer-section" id="offer">
+        <div class="container fade-up">
+            <h2>FAÇA A ESCOLHA INTELIGENTE</h2>
+            <p style="color: #999; margin-bottom: 40px;">Onde você gasta seu dinheiro hoje?</p>
+
+            <div class="price-box">
+                <div class="comparison-flex">
+                    <div class="comp-item" style="border-color: #333; opacity: 0.6;">
+                        <i class="ri-restaurant-2-line comp-icon" style="color: #FF5722;"></i>
+                        <h4 style="color: #FF5722;">1 Pizza + Refri</h4>
+                        <p style="font-size: 0.9rem; margin-top: 10px; color: #888;">Prazer de 30 minutos<br>Gordura saturada<br>Dinheiro que some</p>
+                        <h3 style="margin-top: 15px;">R$ 80,00</h3>
+                    </div>
+
+                    <div style="font-weight: 900; font-size: 1.5rem; color: #555;">VS</div>
+
+                    <div class="comp-item" style="border-color: var(--success); background: #0F1A12; transform: scale(1.05); box-shadow: 0 0 30px rgba(0,200,83,0.1);">
+                        <i class="ri-trophy-line comp-icon" style="color: var(--success);"></i>
+                        <h4 style="color: var(--success);">Shape Vitalício</h4>
+                        <p style="font-size: 0.9rem; margin-top: 10px; color: #AAA;">Saúde blindada<br>Autoestima no topo<br>Conhecimento Eterno</p>
+                        <h3 style="margin-top: 15px; color: var(--text-white);">R$ 97,00</h3>
+                    </div>
+                </div>
+
+                <div style="margin-top: 50px;">
+                    <p class="price-sub">De <span style="text-decoration: line-through;">R$ 297,00</span> por apenas:</p>
+                    <div class="price-big">12x R$ 9,74</div>
+                    <p style="margin-bottom: 40px; color: #BBB;">ou R$ 97,00 à vista</p>
+                    
+                    <a href="#" class="btn-main" style="font-size: 1.3rem; max-width: 500px;"><i class="ri-shopping-cart-fill"></i> GARANTIR MINHA VAGA</a>
+                    
+                    <p style="margin-top: 25px; font-size: 0.85rem; color: #666;">
+                        <i class="ri-shield-check-line" style="vertical-align: middle; font-size: 1.1rem;"></i> 7 dias de garantia incondicional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid #111; color: #444; font-size: 0.8rem;">
+        <p>&copy; 2025 Calistenia Elite. Todos os direitos reservados.</p>
+        <p style="margin-top: 5px;">Este site não tem vínculo com o Facebook Inc.</p>
+    </footer>
+
+    <div class="sticky-bar">
+        <a href="#offer" class="btn-main">COMEÇAR AGORA POR R$ 97</a>
+    </div>
+
+    <script>
+        // Observer para Animação
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Sticky Bar Scroll Logic
+        window.addEventListener('scroll', () => {
+            const bar = document.querySelector('.sticky-bar');
+            if (window.scrollY > 600) {
+                bar.classList.add('visible');
+            } else {
+                bar.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
