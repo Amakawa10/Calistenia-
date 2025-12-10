@@ -3,402 +3,780 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Protocolo Calistenia Elite: O método definitivo de treino com peso do corpo.">
-    <title>Calistenia Elite | O Método Definitivo</title>
+    <meta name="description" content="Despachante Papaléguas - Regularização de veículos rápida e online para todo Brasil. Atendimento presencial em Conchal-SP.">
+    <title>Despachante Papaléguas | Rapidez e Confiança</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
-        /* --- SYSTEM --- */
+        /* --- VARIÁVEIS E RESET --- */
         :root {
-            --bg-main: #050505;
-            --bg-card: #111111;
-            --accent: #FF3D00; /* Laranja Impacto */
-            --accent-hover: #D63300;
-            --text-white: #FFFFFF;
-            --text-gray: #A0A0A0;
-            --success: #00C853;
+            /* Cores da Marca */
+            --primary-dark: #1A162E; /* Fundo escuro */
+            --primary: #2C2658;      /* Roxo/Azul Logo */
+            --accent: #5D9CEC;       /* Azul Claro */
+            --cta: #F3A92C;          /* Laranja/Amarelo (Foco em Conversão) */
+            --cta-hover: #D98E1A;
+            
+            --text-light: #F4F4F9;
+            --text-dark: #333333;
+            --gray-bg: #F0F2F5;
+            
+            --transition: all 0.3s ease;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-white);
+            background-color: var(--gray-bg);
+            color: var(--text-dark);
             overflow-x: hidden;
-            line-height: 1.5;
-            padding-bottom: 80px; /* Espaço Mobile CTA */
         }
 
-        /* --- TYPOGRAPHY --- */
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            color: var(--text-white);
-        }
-
-        .highlight { color: var(--accent); }
-
-        /* --- LAYOUT UTILS --- */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
-        .section { padding: 80px 0; }
-
-        /* --- BUTTONS --- */
-        .btn-main {
+        /* --- BOTÕES (CTA) --- */
+        .btn {
             display: inline-flex;
-            justify-content: center;
             align-items: center;
-            background: var(--accent);
-            color: #FFF;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 1.1rem;
-            padding: 20px 40px;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(255, 61, 0, 0.3);
-            border: 1px solid transparent;
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
             gap: 10px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+            letter-spacing: 0.5px;
         }
 
-        .btn-main:hover {
-            background: var(--accent-hover);
+        .btn-primary {
+            background-color: var(--cta);
+            color: var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(243, 169, 44, 0.4);
+            border: 2px solid var(--cta);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--cta-hover);
+            border-color: var(--cta-hover);
             transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(255, 61, 0, 0.5);
+            box-shadow: 0 6px 20px rgba(243, 169, 44, 0.6);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* --- HEADER & NAV --- */
+        header {
+            background-color: var(--primary-dark);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            z-index: 1003;
+        }
+
+        .logo img {
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+        }
+
+        /* Nav Desktop */
+        .nav-menu ul {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-menu a.nav-link {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-menu a.nav-link:hover {
+            color: var(--cta);
+        }
+
+        .btn-nav {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            color: white !important;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .btn-nav:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Ícone Menu Mobile */
+        .mobile-menu-icon {
+            display: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            z-index: 1003;
         }
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 100vh;
-            min-height: 700px;
-            background: radial-gradient(circle at center, rgba(20,20,20,0.8) 0%, rgba(5,5,5,1) 100%),
-                        url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+            position: relative;
+            min-height: 90vh;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 24px;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            color: #CCC;
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-        }
-
-        /* --- ICON BOXES (AUTHORITY) --- */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-card {
-            background: var(--bg-card);
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid #222;
-            transition: 0.3s;
-            position: relative;
+            color: white;
             overflow: hidden;
         }
 
-        .feature-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            /* Pattern sutil de fundo */
+            background-image: radial-gradient(var(--accent) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
 
-        .icon-circle {
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero .highlight {
+            color: var(--cta);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+
+        .hero-img-style {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0 var(--cta);
+            transform: rotate(-2deg);
+            transition: var(--transition);
+        }
+        
+        .hero-img-style:hover {
+            transform: rotate(0deg);
+        }
+
+        /* --- TRUST BAR --- */
+        .trust-bar {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .trust-bar .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .trust-item i {
+            color: var(--cta);
+            font-size: 1.5rem;
+        }
+
+        /* --- SERVICES --- */
+        .services {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 5px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--cta);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .icon-box {
             width: 60px;
             height: 60px;
-            background: rgba(255, 61, 0, 0.1);
-            color: var(--accent);
+            background-color: rgba(93, 156, 236, 0.1);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* --- LOCATION --- */
+        .location {
+            background-color: white;
+            padding: 80px 0;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .benefits-list li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .benefits-list i {
+            font-size: 2rem;
+            color: var(--cta);
+        }
+
+        .benefits-list strong {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+        }
+
+        .location-map {
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-brand h3 {
+            color: var(--cta);
+            margin-bottom: 10px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* --- FLOATING WHATSAPP --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1001;
+            transition: var(--transition);
+            text-decoration: none;
         }
 
-        .feature-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
-        .feature-card p { color: var(--text-gray); font-size: 0.95rem; }
-
-        /* --- THE SYSTEM --- */
-        .system-row {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            margin-bottom: 100px;
+        .whatsapp-float:hover {
+            transform: scale(1.1);
         }
 
-        .system-text { flex: 1; }
-        .system-img { 
-            flex: 1; 
-            height: 400px; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            position: relative;
-        }
-        
-        .system-img img { width: 100%; height: 100%; object-fit: cover; }
-
-        .check-list li {
-            list-style: none;
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-            color: #DDD;
-        }
-        .check-list li i { 
-            color: var(--accent); 
-            margin-right: 15px; 
-            font-size: 1.4rem;
+        /* --- ANIMAÇÕES E EFEITOS --- */
+        .pulse {
+            animation: pulse-animation 2s infinite;
         }
 
-        /* --- PRICE ANCHOR --- */
-        .offer-section {
-            background: linear-gradient(180deg, #050505 0%, #150500 100%);
-            text-align: center;
-            border-top: 1px solid #111;
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(243, 169, 44, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(243, 169, 44, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(243, 169, 44, 0); }
         }
 
-        .price-box {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 16px;
-            padding: 60px 40px;
-            max-width: 900px;
-            margin: 50px auto;
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
         }
 
-        .comparison-flex {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            margin: 40px 0;
-            flex-wrap: wrap;
+        .fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .comp-item {
-            text-align: center;
-            padding: 30px;
-            border-radius: 12px;
-            background: #0A0A0A;
-            border: 1px solid #222;
-            min-width: 260px;
-            flex: 1;
-        }
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
 
-        .comp-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: block;
-        }
+        /* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+        @media (max-width: 768px) {
+            /* Header & Menu Mobile */
+            .mobile-menu-icon {
+                display: block; /* Mostra o ícone */
+            }
 
-        .price-big { font-size: 4rem; color: var(--text-white); font-weight: 900; line-height: 1; }
-        .price-sub { color: var(--text-gray); font-size: 1rem; margin-bottom: 10px; }
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-dark);
+                
+                /* Lógica de expandir/fechar */
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-in-out;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+            }
 
-        /* --- STICKY CTA --- */
-        .sticky-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 16px;
-            background: rgba(5,5,5,0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid #333;
-            display: flex;
-            justify-content: center;
-            z-index: 100;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-        }
-        .sticky-bar.visible { transform: translateY(0); }
-        .sticky-bar .btn-main { padding: 15px 30px; font-size: 1rem; margin: 0; max-width: 100%; }
+            .nav-menu.active {
+                max-height: 350px; /* Abre o menu */
+            }
 
-        /* --- ANIMATIONS --- */
-        .fade-up { opacity: 0; transform: translateY(30px); transition: 0.6s ease; }
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
+            .nav-menu ul {
+                flex-direction: column;
+                padding: 20px 0;
+                gap: 25px;
+            }
 
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .hero-content h1 { font-size: 3rem; }
-            .system-row { flex-direction: column; gap: 30px; }
-            .system-img { width: 100%; height: 300px; order: -1; } /* Imagem em cima no mobile */
-            .comparison-flex { flex-direction: column; }
-            .comp-item { width: 100%; }
+            .nav-menu a.nav-link {
+                font-size: 1.1rem;
+            }
+
+            .btn-nav {
+                display: block;
+                width: 80%;
+                text-align: center;
+            }
+
+            /* Ajustes Hero */
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-image {
+                display: none; /* Esconde imagem no mobile para focar na conversão */
+            }
+
+            .hero p {
+                margin: 0 auto 30px auto;
+            }
+
+            .cta-group {
+                display: flex;
+                justify-content: center;
+            }
+
+            /* Ajustes Gerais */
+            .trust-bar .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .location-text {
+                order: 1;
+            }
+            .location-map {
+                order: 2;
+                height: 300px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="container hero-content fade-up">
-            <h3><i class="ri-shield-star-line"></i> Método Calistenia Elite</h3>
-            <h1>O CORPO QUE VOCÊ QUER <br>NÃO ESTÁ NA ACADEMIA.<br><span class="highlight">ESTÁ NA SUA DISCIPLINA.</span></h1>
-            <p>Esqueça máquinas. Esqueça mensalidades. Aprenda a usar a gravidade para forjar um corpo forte, atlético e funcional. <strong>100% Em Casa.</strong></p>
-            <a href="#offer" class="btn-main"><i class="ri-fire-fill"></i> QUERO ENTRAR PARA A ELITE</a>
-            <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.6;"><i class="ri-lock-2-line" style="vertical-align: middle;"></i> Acesso Vitalício | Risco Zero</p>
+    <header id="header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="431531916_808120234477280_7598154961525352274_n.jpg" alt="Logo Despachante Papaléguas">
+                <span>Despachante Papaléguas</span>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <i class="ph ph-list"></i>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#localizacao" class="nav-link">Localização</a></li>
+                    <li>
+                        <a href="https://wa.me/5519999999999?text=Olá, vim pelo site e tenho uma dúvida." class="btn-nav">Fale Conosco</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section class="section">
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text fade-up">
+                <span class="badge">Atendimento Brasil & Conchal-SP</span>
+                <h1>Regularize seu veículo na <span class="highlight">velocidade</span> que você precisa.</h1>
+                <p>Esqueça a burocracia e as filas. Resolvemos licenciamento, transferências e débitos com agilidade. Você dirige, nós cuidamos da papelada.</p>
+                
+                <div class="cta-group">
+                    <a href="https://wa.me/5519999999999?text=Olá, gostaria de regularizar meu veículo com urgência." target="_blank" class="btn btn-primary pulse">
+                        <i class="ph ph-whatsapp-logo"></i> Resolver Agora
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image fade-up delay-200">
+                <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1000&auto=format&fit=crop" alt="Carro na estrada" class="hero-img-style">
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-bar">
         <div class="container">
-            <h2 class="text-center fade-up" style="margin-bottom: 60px;">EU NÃO VENDO SONHOS.<br>EU VENDO <span class="highlight">BIOMECÂNICA</span>.</h2>
-            
-            <div class="grid-3">
-                <div class="feature-card fade-up">
-                    <div class="icon-circle"><i class="ri-flashlight-fill"></i></div>
-                    <h3>Hipertrofia Real</h3>
-                    <p>Fibras musculares densas e reais. Um físico que funciona na prática, tem força bruta e estética atlética.</p>
-                </div>
-                <div class="feature-card fade-up">
-                    <div class="icon-circle"><i class="ri-home-5-fill"></i></div>
-                    <h3>Liberdade Absoluta</h3>
-                    <p>Sua casa é o seu centro de treinamento. Se você tem chão e parede, você tem tudo. Fim das desculpas.</p>
-                </div>
-                <div class="feature-card fade-up">
-                    <div class="icon-circle"><i class="ri-heart-pulse-fill"></i></div>
-                    <h3>Articulações de Aço</h3>
-                    <p>A calistenia cura e fortalece tendões, te preparando para envelhecer com mobilidade e sem dores.</p>
-                </div>
+            <div class="trust-item">
+                <i class="ph ph-check-circle"></i> <span>100% Seguro</span>
+            </div>
+            <div class="trust-item">
+                <i class="ph ph-clock-afternoon"></i> <span>Atendimento Rápido</span>
+            </div>
+            <div class="trust-item">
+                <i class="ph ph-map-pin"></i> <span>Base em Conchal-SP</span>
             </div>
         </div>
-    </section>
-
-    <section class="section" style="background: var(--bg-card);">
-        <div class="container">
-            <div class="system-row fade-up">
-                <div class="system-text">
-                    <h2 style="margin-bottom: 20px;">DOMÍNIO TOTAL DO CORPO</h2>
-                    <p style="margin-bottom: 30px; color: #AAA;">Você vai aprender a controlar seu peso em todos os ângulos. Do básico ao avançado, sem nenhum equipamento.</p>
-                    <ul class="check-list">
-                        <li><i class="ri-checkbox-circle-fill"></i> Braços e Peitoral Desenhados</li>
-                        <li><i class="ri-checkbox-circle-fill"></i> Costas em V (Tração)</li>
-                        <li><i class="ri-checkbox-circle-fill"></i> Pernas Potentes (Pistol Squats)</li>
-                        <li><i class="ri-checkbox-circle-fill"></i> Core Blindado</li>
-                    </ul>
-                </div>
-                <div class="system-img">
-                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Treino em Casa">
-                </div>
-            </div>
-
-            <div class="system-row fade-up" style="flex-direction: row-reverse;">
-                <div class="system-text">
-                    <h2 style="margin-bottom: 20px;">ACELERADOR METABÓLICO</h2>
-                    <p style="margin-bottom: 30px; color: #AAA;">A Calistenia constrói o músculo, nosso protocolo de <strong>Corrida & HIIT</strong> derrete a gordura.</p>
-                    <ul class="check-list">
-                        <li><i class="ri-run-line"></i> Protocolos de Corrida de Rua</li>
-                        <li><i class="ri-timer-flash-line"></i> HIIT na sala de estar</li>
-                        <li><i class="ri-lungs-line"></i> Aumente seu fôlego em 200%</li>
-                        <li><i class="ri-fire-line"></i> Queima de gordura pós-treino</li>
-                    </ul>
-                </div>
-                <div class="system-img">
-                    <img src="https://images.unsplash.com/photo-1552674605-5d226a5be380?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Corrida">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section offer-section" id="offer">
-        <div class="container fade-up">
-            <h2>FAÇA A ESCOLHA INTELIGENTE</h2>
-            <p style="color: #999; margin-bottom: 40px;">Onde você gasta seu dinheiro hoje?</p>
-
-            <div class="price-box">
-                <div class="comparison-flex">
-                    <div class="comp-item" style="border-color: #333; opacity: 0.6;">
-                        <i class="ri-restaurant-2-line comp-icon" style="color: #FF5722;"></i>
-                        <h4 style="color: #FF5722;">1 Pizza + Refri</h4>
-                        <p style="font-size: 0.9rem; margin-top: 10px; color: #888;">Prazer de 30 minutos<br>Gordura saturada<br>Dinheiro que some</p>
-                        <h3 style="margin-top: 15px;">R$ 80,00</h3>
-                    </div>
-
-                    <div style="font-weight: 900; font-size: 1.5rem; color: #555;">VS</div>
-
-                    <div class="comp-item" style="border-color: var(--success); background: #0F1A12; transform: scale(1.05); box-shadow: 0 0 30px rgba(0,200,83,0.1);">
-                        <i class="ri-trophy-line comp-icon" style="color: var(--success);"></i>
-                        <h4 style="color: var(--success);">Shape Vitalício</h4>
-                        <p style="font-size: 0.9rem; margin-top: 10px; color: #AAA;">Saúde blindada<br>Autoestima no topo<br>Conhecimento Eterno</p>
-                        <h3 style="margin-top: 15px; color: var(--text-white);">R$ 97,00</h3>
-                    </div>
-                </div>
-
-                <div style="margin-top: 50px;">
-                    <p class="price-sub">De <span style="text-decoration: line-through;">R$ 297,00</span> por apenas:</p>
-                    <div class="price-big">12x R$ 9,74</div>
-                    <p style="margin-bottom: 40px; color: #BBB;">ou R$ 97,00 à vista</p>
-                    
-                    <a href="#" class="btn-main" style="font-size: 1.3rem; max-width: 500px;"><i class="ri-shopping-cart-fill"></i> GARANTIR MINHA VAGA</a>
-                    
-                    <p style="margin-top: 25px; font-size: 0.85rem; color: #666;">
-                        <i class="ri-shield-check-line" style="vertical-align: middle; font-size: 1.1rem;"></i> 7 dias de garantia incondicional.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="text-align: center; padding: 40px; border-top: 1px solid #111; color: #444; font-size: 0.8rem;">
-        <p>&copy; 2025 Calistenia Elite. Todos os direitos reservados.</p>
-        <p style="margin-top: 5px;">Este site não tem vínculo com o Facebook Inc.</p>
-    </footer>
-
-    <div class="sticky-bar">
-        <a href="#offer" class="btn-main">COMEÇAR AGORA POR R$ 97</a>
     </div>
 
+    <section id="servicos" class="services">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2>O que resolvemos para você?</h2>
+                <p>Serviços essenciais com foco total em tirar sua dor de cabeça.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card fade-up">
+                    <div class="icon-box"><i class="ph ph-file-text"></i></div>
+                    <h3>Licenciamento Online</h3>
+                    <p>Emitimos seu licenciamento digital para você rodar tranquilo em qualquer lugar do Brasil.</p>
+                    <a href="https://wa.me/5519999999999?text=Olá, preciso fazer o Licenciamento do meu veículo." target="_blank" class="btn btn-outline">
+                        Licenciar Agora <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="card fade-up delay-100">
+                    <div class="icon-box"><i class="ph ph-car"></i></div>
+                    <h3>Transferência de Veículo</h3>
+                    <p>Comprou ou vendeu? Cuidamos de todo o processo de transferência de propriedade.</p>
+                    <a href="https://wa.me/5519999999999?text=Olá, preciso de ajuda com Transferência de Veículo." target="_blank" class="btn btn-outline">
+                        Iniciar Transferência <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="card fade-up delay-200">
+                    <div class="icon-box"><i class="ph ph-bell-ringing"></i></div>
+                    <h3>Alerta de Multas e Placa</h3>
+                    <p>Receba avisos no WhatsApp no final da placa e monitore a situação do seu veículo.</p>
+                    <a href="https://wa.me/5519999999999?text=Tenho interesse no serviço de Alerta de Placa." target="_blank" class="btn btn-outline">
+                        Ativar Alerta <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="card fade-up delay-300">
+                    <div class="icon-box"><i class="ph ph-shield-check"></i></div>
+                    <h3>Regularização Geral</h3>
+                    <p>Débitos, bloqueios, motor alterado? Analisamos seu caso e buscamos a solução.</p>
+                    <a href="https://wa.me/5519999999999?text=Meu caso é complexo, preciso de regularização geral." target="_blank" class="btn btn-outline">
+                        Falar com Especialista <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="localizacao" class="location">
+        <div class="container location-grid">
+            <div class="location-text fade-up">
+                <h2>Do Digital ao Presencial</h2>
+                <p>Entendemos que alguns clientes preferem resolver tudo pelo celular, enquanto outros gostam de um aperto de mão.</p>
+                
+                <ul class="benefits-list">
+                    <li>
+                        <i class="ph ph-globe-hemisphere-west"></i>
+                        <div>
+                            <strong>Atendimento Online Brasil</strong>
+                            <p>Resolva tudo pelo WhatsApp sem sair de casa.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="ph ph-storefront"></i>
+                        <div>
+                            <strong>Sede em Conchal - SP</strong>
+                            <p>Venha tomar um café conosco e traga seus documentos.</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <a href="https://wa.me/5519999999999?text=Quero agendar um atendimento ou tirar dúvidas." class="btn btn-primary">
+                    <i class="ph ph-whatsapp-logo"></i> Chamar no WhatsApp
+                </a>
+            </div>
+            <div class="location-map fade-up delay-200">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.006248984956!2d-47.1687!3d-22.3275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c87c7e57c6c0b3%3A0x6d0c0c0c0c0c0c0c!2sConchal%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>Despachante Papaléguas</h3>
+                <p>Agilidade e confiança para você e seu veículo.</p>
+            </div>
+            <div class="footer-contact">
+                <p><i class="ph ph-whatsapp-logo"></i> (19) 99999-9999</p>
+                <p><i class="ph ph-map-pin"></i> Conchal, SP</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 Despachante Papaléguas. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5519999999999?text=Olá! Preciso de um despachante." class="whatsapp-float" target="_blank" aria-label="Fale no WhatsApp">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+
     <script>
-        // Observer para Animação
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- SCROLL REVEAL (Animação ao rolar) ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const elementsToAnimate = document.querySelectorAll('.fade-up');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+
+            // --- MENU MOBILE RESPONSIVO ---
+            const mobileMenuBtn = document.querySelector('.mobile-menu-icon');
+            const mobileMenuIcon = document.querySelector('.mobile-menu-icon i');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            // Abrir/Fechar Menu
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+
+                // Troca ícone (Lista <-> X)
+                if (navMenu.classList.contains('active')) {
+                    mobileMenuIcon.classList.remove('ph-list');
+                    mobileMenuIcon.classList.add('ph-x');
+                } else {
+                    mobileMenuIcon.classList.remove('ph-x');
+                    mobileMenuIcon.classList.add('ph-list');
                 }
             });
-        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+            // Fechar ao clicar em um link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    mobileMenuIcon.classList.remove('ph-x');
+                    mobileMenuIcon.classList.add('ph-list');
+                });
+            });
 
-        // Sticky Bar Scroll Logic
-        window.addEventListener('scroll', () => {
-            const bar = document.querySelector('.sticky-bar');
-            if (window.scrollY > 600) {
-                bar.classList.add('visible');
-            } else {
-                bar.classList.remove('visible');
-            }
+            // Smooth Scroll (Fallback)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
