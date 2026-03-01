@@ -1,783 +1,209 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Despachante Papaléguas - Regularização de veículos rápida e online para todo Brasil. Atendimento presencial em Conchal-SP.">
-    <title>Despachante Papaléguas | Rapidez e Confiança</title>
-    
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
 
     <style>
-        /* --- VARIÁVEIS E RESET --- */
-        :root {
-            /* Cores da Marca */
-            --primary-dark: #1A162E; /* Fundo escuro */
-            --primary: #2C2658;      /* Roxo/Azul Logo */
-            --accent: #5D9CEC;       /* Azul Claro */
-            --cta: #F3A92C;          /* Laranja/Amarelo (Foco em Conversão) */
-            --cta-hover: #D98E1A;
-            
-            --text-light: #F4F4F9;
-            --text-dark: #333333;
-            --gray-bg: #F0F2F5;
-            
-            --transition: all 0.3s ease;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--gray-bg);
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- BOTÕES (CTA) --- */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            cursor: pointer;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-primary {
-            background-color: var(--cta);
-            color: var(--primary-dark);
-            box-shadow: 0 4px 15px rgba(243, 169, 44, 0.4);
-            border: 2px solid var(--cta);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--cta-hover);
-            border-color: var(--cta-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(243, 169, 44, 0.6);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            width: 100%;
-            justify-content: center;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        /* --- HEADER & NAV --- */
-        header {
-            background-color: var(--primary-dark);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            font-weight: 700;
-            font-size: 1.2rem;
-            z-index: 1003;
-        }
-
-        .logo img {
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid var(--accent);
-        }
-
-        /* Nav Desktop */
-        .nav-menu ul {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .nav-menu a.nav-link {
-            color: #ccc;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-menu a.nav-link:hover {
-            color: var(--cta);
-        }
-
-        .btn-nav {
-            background: rgba(255,255,255,0.1);
-            padding: 8px 20px;
-            border-radius: 20px;
-            color: white !important;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-        
-        .btn-nav:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        /* Ícone Menu Mobile */
-        .mobile-menu-icon {
-            display: none;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-            z-index: 1003;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            position: relative;
-            min-height: 90vh;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            display: flex;
-            align-items: center;
-            color: white;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            /* Pattern sutil de fundo */
-            background-image: radial-gradient(var(--accent) 1px, transparent 1px);
-            background-size: 20px 20px;
-            opacity: 0.1;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .badge {
-            background-color: var(--accent);
-            color: var(--primary-dark);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero .highlight {
-            color: var(--cta);
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #e0e0e0;
-            margin-bottom: 30px;
-            max-width: 90%;
-        }
-
-        .hero-img-style {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 20px 20px 0 var(--cta);
-            transform: rotate(-2deg);
-            transition: var(--transition);
-        }
-        
-        .hero-img-style:hover {
-            transform: rotate(0deg);
-        }
-
-        /* --- TRUST BAR --- */
-        .trust-bar {
-            background-color: var(--primary);
-            color: white;
-            padding: 20px 0;
-            border-bottom: 4px solid var(--accent);
-        }
-
-        .trust-bar .container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .trust-item i {
-            color: var(--cta);
-            font-size: 1.5rem;
-        }
-
-        /* --- SERVICES --- */
-        .services {
-            padding: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 10px;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: var(--transition);
-            border-top: 5px solid transparent;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-top-color: var(--cta);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(93, 156, 236, 0.1);
-            color: var(--primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--primary-dark);
-        }
-
-        .card p {
-            color: #666;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        /* --- LOCATION --- */
-        .location {
-            background-color: white;
-            padding: 80px 0;
-        }
-
-        .location-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .benefits-list {
-            list-style: none;
-            margin: 30px 0;
-        }
-
-        .benefits-list li {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .benefits-list i {
-            font-size: 2rem;
-            color: var(--cta);
-        }
-
-        .benefits-list strong {
-            display: block;
-            font-size: 1.2rem;
-            color: var(--primary-dark);
-        }
-
-        .location-map {
-            height: 400px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: var(--primary-dark);
-            color: white;
-            padding: 60px 0 20px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-brand h3 {
-            color: var(--cta);
-            margin-bottom: 10px;
-        }
-
-        .footer-contact p {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            font-size: 0.9rem;
-            color: #888;
-        }
-
-        /* --- FLOATING WHATSAPP --- */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            z-index: 1001;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* --- ANIMAÇÕES E EFEITOS --- */
-        .pulse {
-            animation: pulse-animation 2s infinite;
-        }
-
-        @keyframes pulse-animation {
-            0% { box-shadow: 0 0 0 0 rgba(243, 169, 44, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(243, 169, 44, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(243, 169, 44, 0); }
-        }
-
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .fade-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .delay-100 { transition-delay: 0.1s; }
-        .delay-200 { transition-delay: 0.2s; }
-        .delay-300 { transition-delay: 0.3s; }
-
-        /* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
-        @media (max-width: 768px) {
-            /* Header & Menu Mobile */
-            .mobile-menu-icon {
-                display: block; /* Mostra o ícone */
-            }
-
-            .nav-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-dark);
-                
-                /* Lógica de expandir/fechar */
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.4s ease-in-out;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.2);
-            }
-
-            .nav-menu.active {
-                max-height: 350px; /* Abre o menu */
-            }
-
-            .nav-menu ul {
-                flex-direction: column;
-                padding: 20px 0;
-                gap: 25px;
-            }
-
-            .nav-menu a.nav-link {
-                font-size: 1.1rem;
-            }
-
-            .btn-nav {
-                display: block;
-                width: 80%;
-                text-align: center;
-            }
-
-            /* Ajustes Hero */
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                padding-top: 40px;
-                padding-bottom: 40px;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-image {
-                display: none; /* Esconde imagem no mobile para focar na conversão */
-            }
-
-            .hero p {
-                margin: 0 auto 30px auto;
-            }
-
-            .cta-group {
-                display: flex;
-                justify-content: center;
-            }
-
-            /* Ajustes Gerais */
-            .trust-bar .container {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .location-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .location-text {
-                order: 1;
-            }
-            .location-map {
-                order: 2;
-                height: 300px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-        }
+        *{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    height: 15vh;
+
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+
+}
+
+.logo-menu-superior{
+    width: 60px;
+    margin-left: 20px;
+
+}
+
+.material-symbols-outlined{
+    width: 50px;
+    margin-right: 20px;
+    color: #1E1E1E;
+}
+
+
+
+.video-introducao{
+    background-color: #1E1E1E;
+    width: 100%;
+    height: 65vh;
+}
+
+.secao-de-conteudo-1{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1E1E1E;
+}
+
+.titulo-secao-1{
+   font-family: "Inter", sans-serif;
+   margin-top: 10px;
+   color: #FFFFFF;
+   
+}
+
+.paragrafo-secao-1{
+    font-family: "Inter", sans-serif;
+    margin-top: 15px;
+    color: #FFFFFF;
+    font-size: 13px;
+}
+
+
+.botao-chamada-1{
+    width: 80%;
+    background-color: #F9DB27;
+    height: 70px;
+    margin-top: 20px;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: 
+    center;
+    padding: 5px 10px;
+}
+.ancora-secao-1-botao{
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #1E1E1E;
+    background-color: #F9DB27;
+    padding: 15px;
+    border-radius: 15px;
+    border: 5px solid black;
+
+    
+}
+.secao-de-conteudo-2{
+    width: 100%;
+    height: 180vh;
+    background-color: #1E1E1E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.icone-de-carro{
+    width: 70px;
+}
+
+.cnh-do-brasil{
+    width: 90%;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 2px solid #FFFFFF;
+    border-radius: 15px;
+    text-align: left;
+    color: white;
+    box-sizing: border-box;
+}
+.imagem-cnh-do-brasil{
+    height: 40%;
+    border-top-left-radius: 15px ;
+    border-top-right-radius: 15px ;
+}
+
+.titulo-card-cnh-do-brasil{
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    padding: 10px;
+}
+
+.paragrafo-cnh-do-brasil{
+        font-family: "Inter", sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    margin: 15px;
+}
+
+.ancora-cnh-do-brasil{
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid #FFFFFF;
+    width: 60%;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    border-radius: 20px;
+    
+}
+
+
+.planos{
+    background-color: #F9DB27;
+    width: 100%;
+    height: 100vh;
+}
     </style>
 </head>
 <body>
-
-    <header id="header">
-        <div class="container header-content">
-            <div class="logo">
-                <img src="431531916_808120234477280_7598154961525352274_n.jpg" alt="Logo Despachante Papaléguas">
-                <span>Despachante Papaléguas</span>
-            </div>
-
-            <div class="mobile-menu-icon">
-                <i class="ph ph-list"></i>
-            </div>
-
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="#localizacao" class="nav-link">Localização</a></li>
-                    <li>
-                        <a href="https://wa.me/5519999999999?text=Olá, vim pelo site e tenho uma dúvida." class="btn-nav">Fale Conosco</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <a href="#"><img src="imagens/Logo-Auto-escola-JR.svg" alt="Logo Auto escola J & R" class="logo-menu-superior"></a>
+        <a href="#" class="menu-superior"><span class="material-symbols-outlined">menu</span></a>
+        
     </header>
 
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-text fade-up">
-                <span class="badge">Atendimento Brasil & Conchal-SP</span>
-                <h1>Regularize seu veículo na <span class="highlight">velocidade</span> que você precisa.</h1>
-                <p>Esqueça a burocracia e as filas. Resolvemos licenciamento, transferências e débitos com agilidade. Você dirige, nós cuidamos da papelada.</p>
-                
-                <div class="cta-group">
-                    <a href="https://wa.me/5519999999999?text=Olá, gostaria de regularizar meu veículo com urgência." target="_blank" class="btn btn-primary pulse">
-                        <i class="ph ph-whatsapp-logo"></i> Resolver Agora
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image fade-up delay-200">
-                <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1000&auto=format&fit=crop" alt="Carro na estrada" class="hero-img-style">
-            </div>
+    <section class="video-introducao">
+        <video src="#" alt="video-introducoa"></video>
+    </section>
+
+    <section class="secao-de-conteudo-1">
+        <h2 class="titulo-secao-1">Sua Liberdade Começa aqui</h2>
+        <p class="paragrafo-secao-1">Tire sua CNH com instrutores pacientes e horários flexiveis</p>
+
+        <div class="botao-chamada-1">
+            <a href="" class="ancora-secao-1-botao">FALE CONOSCO</a>
         </div>
     </section>
 
-    <div class="trust-bar">
-        <div class="container">
-            <div class="trust-item">
-                <i class="ph ph-check-circle"></i> <span>100% Seguro</span>
-            </div>
-            <div class="trust-item">
-                <i class="ph ph-clock-afternoon"></i> <span>Atendimento Rápido</span>
-            </div>
-            <div class="trust-item">
-                <i class="ph ph-map-pin"></i> <span>Base em Conchal-SP</span>
-            </div>
-        </div>
-    </div>
+    <section class="secao-de-conteudo-2">
+        <img src="imagens/icone-carro.svg" alt="icone-carro" class="icone-de-carro">
 
-    <section id="servicos" class="services">
-        <div class="container">
-            <div class="section-header fade-up">
-                <h2>O que resolvemos para você?</h2>
-                <p>Serviços essenciais com foco total em tirar sua dor de cabeça.</p>
-            </div>
 
-            <div class="cards-grid">
-                <div class="card fade-up">
-                    <div class="icon-box"><i class="ph ph-file-text"></i></div>
-                    <h3>Licenciamento Online</h3>
-                    <p>Emitimos seu licenciamento digital para você rodar tranquilo em qualquer lugar do Brasil.</p>
-                    <a href="https://wa.me/5519999999999?text=Olá, preciso fazer o Licenciamento do meu veículo." target="_blank" class="btn btn-outline">
-                        Licenciar Agora <i class="ph ph-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="card fade-up delay-100">
-                    <div class="icon-box"><i class="ph ph-car"></i></div>
-                    <h3>Transferência de Veículo</h3>
-                    <p>Comprou ou vendeu? Cuidamos de todo o processo de transferência de propriedade.</p>
-                    <a href="https://wa.me/5519999999999?text=Olá, preciso de ajuda com Transferência de Veículo." target="_blank" class="btn btn-outline">
-                        Iniciar Transferência <i class="ph ph-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="card fade-up delay-200">
-                    <div class="icon-box"><i class="ph ph-bell-ringing"></i></div>
-                    <h3>Alerta de Multas e Placa</h3>
-                    <p>Receba avisos no WhatsApp no final da placa e monitore a situação do seu veículo.</p>
-                    <a href="https://wa.me/5519999999999?text=Tenho interesse no serviço de Alerta de Placa." target="_blank" class="btn btn-outline">
-                        Ativar Alerta <i class="ph ph-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="card fade-up delay-300">
-                    <div class="icon-box"><i class="ph ph-shield-check"></i></div>
-                    <h3>Regularização Geral</h3>
-                    <p>Débitos, bloqueios, motor alterado? Analisamos seu caso e buscamos a solução.</p>
-                    <a href="https://wa.me/5519999999999?text=Meu caso é complexo, preciso de regularização geral." target="_blank" class="btn btn-outline">
-                        Falar com Especialista <i class="ph ph-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+        <div class="cnh-do-brasil">
+            <img src="imagens/cnh-do-brasil.jpeg" alt="CNH do brasil" class="imagem-cnh-do-brasil">
+            <h3 class="titulo-card-cnh-do-brasil">A Nova CNH do Brasil </h3>
+            <p class="paragrafo-cnh-do-brasil">Aproveite o novo formato para reduzir custos desnecessários e conquistar sua liberdade sem burocracia</p>
+            <a href="" class="ancora-cnh-do-brasil">APROVEITAR</a>
+            <a href="" class="ancora-cnh-do-brasil">TIRE SUAS DÚVIDAS</a>
         </div>
     </section>
 
-    <section id="localizacao" class="location">
-        <div class="container location-grid">
-            <div class="location-text fade-up">
-                <h2>Do Digital ao Presencial</h2>
-                <p>Entendemos que alguns clientes preferem resolver tudo pelo celular, enquanto outros gostam de um aperto de mão.</p>
-                
-                <ul class="benefits-list">
-                    <li>
-                        <i class="ph ph-globe-hemisphere-west"></i>
-                        <div>
-                            <strong>Atendimento Online Brasil</strong>
-                            <p>Resolva tudo pelo WhatsApp sem sair de casa.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="ph ph-storefront"></i>
-                        <div>
-                            <strong>Sede em Conchal - SP</strong>
-                            <p>Venha tomar um café conosco e traga seus documentos.</p>
-                        </div>
-                    </li>
-                </ul>
-                
-                <a href="https://wa.me/5519999999999?text=Quero agendar um atendimento ou tirar dúvidas." class="btn btn-primary">
-                    <i class="ph ph-whatsapp-logo"></i> Chamar no WhatsApp
-                </a>
-            </div>
-            <div class="location-map fade-up delay-200">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.006248984956!2d-47.1687!3d-22.3275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c87c7e57c6c0b3%3A0x6d0c0c0c0c0c0c0c!2sConchal%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
+    <section class="planos">
+        
     </section>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h3>Despachante Papaléguas</h3>
-                <p>Agilidade e confiança para você e seu veículo.</p>
-            </div>
-            <div class="footer-contact">
-                <p><i class="ph ph-whatsapp-logo"></i> (19) 99999-9999</p>
-                <p><i class="ph ph-map-pin"></i> Conchal, SP</p>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>© 2024 Despachante Papaléguas. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/5519999999999?text=Olá! Preciso de um despachante." class="whatsapp-float" target="_blank" aria-label="Fale no WhatsApp">
-        <i class="ph ph-whatsapp-logo"></i>
-    </a>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // --- SCROLL REVEAL (Animação ao rolar) ---
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            const elementsToAnimate = document.querySelectorAll('.fade-up');
-            elementsToAnimate.forEach(el => {
-                observer.observe(el);
-            });
-
-            // --- MENU MOBILE RESPONSIVO ---
-            const mobileMenuBtn = document.querySelector('.mobile-menu-icon');
-            const mobileMenuIcon = document.querySelector('.mobile-menu-icon i');
-            const navMenu = document.querySelector('.nav-menu');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            // Abrir/Fechar Menu
-            mobileMenuBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-
-                // Troca ícone (Lista <-> X)
-                if (navMenu.classList.contains('active')) {
-                    mobileMenuIcon.classList.remove('ph-list');
-                    mobileMenuIcon.classList.add('ph-x');
-                } else {
-                    mobileMenuIcon.classList.remove('ph-x');
-                    mobileMenuIcon.classList.add('ph-list');
-                }
-            });
-
-            // Fechar ao clicar em um link
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('active');
-                    mobileMenuIcon.classList.remove('ph-x');
-                    mobileMenuIcon.classList.add('ph-list');
-                });
-            });
-
-            // Smooth Scroll (Fallback)
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
