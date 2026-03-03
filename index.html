@@ -9,169 +9,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>Document</title>
-
-    <style>
-
-        *{
-    margin: 0;
-    padding: 0;
-}
-
-header{
-    width: 100%;
-    height: 15vh;
-
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    box-sizing: border-box;
-    align-items: center;
-
-}
-
-.logo-menu-superior{
-    width: 60px;
-    margin-left: 20px;
-
-}
-
-.material-symbols-outlined{
-    width: 50px;
-    margin-right: 20px;
-    color: #1E1E1E;
-}
-
-
-
-.video-introducao{
-    background-color: #1E1E1E;
-    width: 100%;
-    height: 65vh;
-}
-
-.secao-de-conteudo-1{
-    width: 100%;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #1E1E1E;
-}
-
-.titulo-secao-1{
-   font-family: "Inter", sans-serif;
-   margin-top: 10px;
-   color: #FFFFFF;
-   
-}
-
-.paragrafo-secao-1{
-    font-family: "Inter", sans-serif;
-    margin-top: 15px;
-    color: #FFFFFF;
-    font-size: 13px;
-}
-
-
-.botao-chamada-1{
-    width: 80%;
-    background-color: #F9DB27;
-    height: 70px;
-    margin-top: 20px;
-    border-radius: 15px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: 
-    center;
-    padding: 5px 10px;
-}
-.ancora-secao-1-botao{
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    text-decoration: none;
-    color: #1E1E1E;
-    background-color: #F9DB27;
-    padding: 15px;
-    border-radius: 15px;
-    border: 5px solid black;
-
-    
-}
-.secao-de-conteudo-2{
-    width: 100%;
-    height: 180vh;
-    background-color: #1E1E1E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-
-.icone-de-carro{
-    width: 70px;
-}
-
-.cnh-do-brasil{
-    width: 90%;
-    height: 150vh;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    border: 2px solid #FFFFFF;
-    border-radius: 15px;
-    text-align: left;
-    color: white;
-    box-sizing: border-box;
-}
-.imagem-cnh-do-brasil{
-    height: 40%;
-    border-top-left-radius: 15px ;
-    border-top-right-radius: 15px ;
-}
-
-.titulo-card-cnh-do-brasil{
-    font-family: "Inter", sans-serif;
-    font-size: 32px;
-    padding: 10px;
-}
-
-.paragrafo-cnh-do-brasil{
-        font-family: "Inter", sans-serif;
-    font-size: 20px;
-    padding: 10px;
-    margin: 15px;
-}
-
-.ancora-cnh-do-brasil{
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    padding: 10px;
-    border: 1px solid #FFFFFF;
-    width: 60%;
-    margin: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    font-weight: 300;
-    border-radius: 20px;
-    
-}
-
-
-.planos{
-    background-color: #F9DB27;
-    width: 100%;
-    height: 100vh;
-}
-    </style>
 </head>
 <body>
     <header>
         <a href="#"><img src="imagens/Logo-Auto-escola-JR.svg" alt="Logo Auto escola J & R" class="logo-menu-superior"></a>
-        <a href="#" class="menu-superior"><span class="material-symbols-outlined">menu</span></a>
+        <a href="#"><span class="material-symbols-outlined">menu</span></a>
         
     </header>
 
@@ -188,21 +30,57 @@ header{
         </div>
     </section>
 
+
+
+
+
     <section class="secao-de-conteudo-2">
         <img src="imagens/icone-carro.svg" alt="icone-carro" class="icone-de-carro">
 
 
         <div class="cnh-do-brasil">
-            <img src="imagens/cnh-do-brasil.jpeg" alt="CNH do brasil" class="imagem-cnh-do-brasil">
-            <h3 class="titulo-card-cnh-do-brasil">A Nova CNH do Brasil </h3>
-            <p class="paragrafo-cnh-do-brasil">Aproveite o novo formato para reduzir custos desnecessários e conquistar sua liberdade sem burocracia</p>
-            <a href="" class="ancora-cnh-do-brasil">APROVEITAR</a>
-            <a href="" class="ancora-cnh-do-brasil">TIRE SUAS DÚVIDAS</a>
+            <div class="imagem-card">
+
+            </div>
+            <img src="imagens/imagem-banner-cnh-do-brasil.png" alt="CNH do brasil" class="imagem-cnh-do-brasil">
+
+
+
+
+
+            <div class="textos-cnh-do-brasil">
+                <h3 class="titulo-card-cnh-do-brasil">A Nova CNH do Brasil </h3>
+                <p class="paragrafo-cnh-do-brasil">Aproveite o novo formato para reduzir custos desnecessários e conquistar sua liberdade sem burocracia</p>
+                <div class="botoes-cta-secao-2">
+                    <a href="" class="ancora-cnh-do-brasil">APROVEITAR</a>
+                    <a href="" class="ancora-cnh-do-brasil">TIRE SUAS DÚVIDAS</a>
+                </div>
+            </div>
         </div>
     </section>
 
+    <div class="divisor-secao-2-3">
+        <img src="imagens/placa-de-atencao.svg" alt="Icone de placa de atencao" class="placa-divisa">
+    </div>
+    <div class="introducao-planos">
+        <h3 class="titulo-introducao">Sua CNH no seu ritmo</h3>
+        <p class="introducao-paragrafo">Sem pacotes engessados. Identifique seu nível de experiência e pague apenas pelo que você realmente precisa</p>
+        <a href="" class="ancora-introducao-planos">FALE CONOSCO</a>
+    </div>
+
     <section class="planos">
-        
+        <div class="container-card">
+            <div class="bandeira">
+                <img src="imagens/logo-auto-escola-jr.svg" alt="logo card" class="imagem-card">
+                <h4 class="titulocard">COMBO BÁSICO</h4>
+            </div>
+            <h2 class="foco-letra">2</h2>
+            <h3 class="descricao-aula">AULAS</h3>
+            <P class="descricao-card"> Ideal para quem já dirige e precisa apenas tirar vícios ou conhecer o percurso da prova</P>
+            <a href="#" class="ancora-card">SAIBA MAIS</a>
+
+
+        </div>
     </section>
 
 </body>
