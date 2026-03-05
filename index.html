@@ -1,342 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <link rel="stylesheet" href="estilos/estilo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>Document</title>
-    <style>
-
-*{
-    margin: 0;
-    padding: 0;
-}
-
-header{
-    width: 100%;
-    height: 15vh;
-
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    box-sizing: border-box;
-    align-items: center;
-
-}
-
-.logo-menu-superior{
-    width: 90px;
-    margin-left: 20px;
-
-}
-
-.material-symbols-outlined{
-    width: 70px;
-    margin-right: 20px;
-    color: #1E1E1E;
-    
-}
-
-
-
-.video-introducao{
-    background-color: #1E1E1E;
-    width: 100%;
-    height: 65vh;
-}
-
-.secao-de-conteudo-1{
-    width: 100%;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #1E1E1E;
-}
-
-.titulo-secao-1{
-   font-family: "Inter", sans-serif;
-   margin-top: 10px;
-   color: #FFFFFF;
-   
-}
-
-.paragrafo-secao-1{
-    font-family: "Inter", sans-serif;
-    margin-top: 25px;
-    color: #FFFFFF;
-    font-size: 13px;
-    padding: 8px;
-}
-
-
-.botao-chamada-1{
-    width: 80%;
-    background-color: #F9DB27;
-    height: 70px;
-    margin-top: 30px;
-    border-radius: 15px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: 
-    center;
-    padding: 5px 10px;
-}
-.ancora-secao-1-botao{
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    text-decoration: none;
-    color: #1E1E1E;
-    background-color: #F9DB27;
-    padding: 15px;
-    border-radius: 15px;
-    border: 5px solid black;
-
-    
-}
-.secao-de-conteudo-2{
-    width: 100%;
-    height: 100vh;
-    background-color: #1E1E1E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-
-.icone-de-carro{
-    width: 35px;
-    margin: 15px;
-}
-
-.cnh-do-brasil{
-    width: 90%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    border: 3px solid #FFFFFF;
-    border-radius: 15px;
-    text-align: left;
-    color: white;
-    box-sizing: border-box;
-}
-
-
-.imagem-cnh-do-brasil{
-    width: 100%;
-    height: 30%;
-    border-top-left-radius: 10px ;
-    border-top-right-radius: 10px ;
-}
-
-
-
-
-
-.textos-cnh-do-brasil{
-    width: 100%;
-    height: 50%;
-}
-
-.titulo-card-cnh-do-brasil{
-    font-family: "Inter", sans-serif;
-    font-size: 28px;
-    padding: 10px;
-    margin: 15px;
-}
-
-.paragrafo-cnh-do-brasil{
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    padding: 10px;
-    margin: 15px;
-}
-
-
-
-.botoes-cta-secao-2{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.ancora-cnh-do-brasil{
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    padding: 10px;
-    border: 1px solid #FFFFFF;
-    width: 60%;
-    margin: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    font-weight: 300;
-    border-radius: 12px;
-    
-}
-
-
-.divisor-secao-2-3{
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #1E1E1E;
-}
-
-
-.placa-divisa{
-    width: 40px;
-}
-
-
-.introducao-planos{
-    width: 100%;
-    height: 35vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #1E1E1E;
-}
-
-.titulo-introducao{
-      font-family: "Inter", sans-serif;
-    font-size: 24px;  
-        color: white;
-}
-
-.introducao-paragrafo{
-    font-family: "Inter", sans-serif;
-    font-size: 16px;  
-    padding: 5px;
-    width: 65%;
-        color: white;
-}
-
-
-
-
-.ancora-introducao-planos{
-    width: 50%;
-    text-decoration: none;
-    color: white;
-    border: 1px solid #FFFFFF;
-    border-radius: 12px;
-    text-align: center;
-    height: 30px;
-    font-family: "Inter", sans-serif;
-    padding: 3px;
-    margin: auto 2px;
-
-}
-.planos{
-    background-color: #1E1E1E;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-
-
-
-
-.container-card{
-    width: 90%;
-    height: 468px;
-    border: 1px solid #1E1E24;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #1E1E24;
-    border-radius: 12px;
-    
-
-}
-
-.bandeira{
-    width: 80%;
-    border: 1px solid #005BD3;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    margin-left: 0px;
-    align-items: center;
-    background-color: #005BD3;
-    
-
-}
-
-.imagem-card{
-    width: 40px;
-}
-
-
-
-.titulocard{
-    font-family: "Inter", sans-serif;
-    color: #FFFFFF;
-    margin-left: 30px;
-}
-.foco-letra{
-        font-family: "Inter", sans-serif;
-        font-size: 96px;
-            color: #FFFFFF;
-            margin-top: 15px;
-}
-
-.descricao-aula{
-            font-family: "Inter", sans-serif;
-        font-size: 48px;
-            color: #FFFFFF;
-            margin-top: 0px;
-}
-
-.descricao-card{
-    width: 70%;
-    margin: 10px auto;
-    text-align: center;
-                font-family: "Inter", sans-serif;
-                            color: #FFFFFF;
-                                        margin-top: 20px;
-}
-
-
-.ancora-card{
-                font-family: "Inter", sans-serif;
-                color: #FFFFFF;
-                 border: 1px solid #FFFFFF;
-                 margin-top: 30px;
-                 width: 70%;
-                 padding: 3px;
-                 letter-spacing: 2px;
-                 text-align: center;
-                 border-radius: 18px;
-                 text-decoration: none;
-}
-
-        
-    </style>
 </head>
 <body>
     <header>
-        <a href="#"><img src="logo-auto-escola-jr.svg" alt="Logo Auto escola JR" class="logo-menu-superior"></a>
+        <a href="#"><img src="imagens/Logo-Auto-escola-JR.svg" alt="Logo Auto escola J & R" class="logo-menu-superior"></a>
         <a href="#"><span class="material-symbols-outlined">menu</span></a>
         
     </header>
@@ -359,14 +35,14 @@ header{
 
 
     <section class="secao-de-conteudo-2">
-        <img src="icone-carro.svg" alt="icone-carro" class="icone-de-carro">
+        <img src="imagens/icone-carro.svg" alt="icone-carro" class="icone-de-carro">
 
 
         <div class="cnh-do-brasil">
             <div class="imagem-card">
 
             </div>
-            <img src="imagem-banner-cnh-do-brasil.png" alt="CNH do brasil" class="imagem-cnh-do-brasil">
+            <img src="imagens/imagem-banner-cnh-do-brasil.png" alt="CNH do brasil" class="imagem-cnh-do-brasil">
 
 
 
@@ -384,7 +60,7 @@ header{
     </section>
 
     <div class="divisor-secao-2-3">
-        <img src="placa-de-atencao.svg" alt="Icone de placa de atencao" class="placa-divisa">
+        <img src="imagens/placa-de-atencao.svg" alt="Icone de placa de atencao" class="placa-divisa">
     </div>
     <div class="introducao-planos">
         <h3 class="titulo-introducao">Sua CNH no seu ritmo</h3>
@@ -392,10 +68,35 @@ header{
         <a href="" class="ancora-introducao-planos">FALE CONOSCO</a>
     </div>
 
+
+
+    <div class="introducao-planos">
+        <hr class="linha-semaforo">
+        <img src="imagens/semaforo-luz-verde.svg.svg" alt="Semaforo com a luz verde" class="semaforo-introducao">
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <section class="planos">
-        <div class="container-card">
-            <div class="bandeira">
-                <img src="logo-auto-escola-jr.svg" alt="logo card" class="imagem-card">
+        <div class="container-card-combo-basico">
+            <div class="bandeira-combo-basico">
+                <img src="imagens/logo-auto-escola-jr.svg" alt="logo card" class="imagem-card">
                 <h4 class="titulocard">COMBO BÁSICO</h4>
             </div>
             <h2 class="foco-letra">2</h2>
@@ -405,7 +106,58 @@ header{
 
 
         </div>
+
+
+        <div class="container-card-combo-intermediario">
+            <div class="bandeira-combo-intermediario">
+                <img src="imagens/logo-auto-escola-jr.svg" alt="logo card" class="imagem-card">
+                <h4 class="titulocard">COMBO <br>INTERMEDIARIO</h4>
+            </div>
+            <h2 class="foco-letra">4</h2>
+            <h3 class="descricao-aula">AULAS</h3>
+            <P class="descricao-card"> Domine a baliza, perca o medo do trânsito e ganhe confiança total</P>
+            <a href="#" class="ancora-card">SAIBA MAIS</a>
+
+
+        </div>
+
+
+        <div class="container-card-combo-avancado">
+            <div class="bandeira-combo-avancado">
+                <img src="imagens/logo-auto-escola-jr.svg" alt="logo card" class="imagem-card">
+                <h4 class="titulocard">COMBO <br>AVANÇADO</h4>
+            </div>
+            <h2 class="foco-letra">6</h2>
+            <h3 class="descricao-aula">AULAS</h3>
+            <P class="descricao-card"> Ideal para quem já dirige e precisa apenas tirar vícios ou conhecer o percurso da prova</P>
+            <a href="#" class="ancora-card">SAIBA MAIS</a>
+
+
+        </div>
+
+        <div class="container-card-combo-expert">
+            <div class="bandeira-combo-expert">
+                <img src="imagens/logo-auto-escola-jr.svg" alt="logo card" class="imagem-card">
+                <h4 class="titulocard">COMBO EXPERT</h4>
+            </div>
+            <h2 class="foco-letra">10</h2>
+            <h3 class="descricao-aula">AULAS</h3>
+            <P class="descricao-card"> Ideal para quem já dirige e precisa apenas tirar vícios ou conhecer o percurso da prova</P>
+            <a href="#" class="ancora-card">SAIBA MAIS</a>
+        </div>
+
+
+
     </section>
+
+    <div class="final-planos-divisoria">
+        <img src="imagens/faixa-de-pedestre.svg" alt=" Faixa de Pedestres" class="imagem-divisoria-fim-planos">
+    </div>
+
+
+
+
+
 
 </body>
 </html>
