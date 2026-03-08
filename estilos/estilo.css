@@ -5,7 +5,7 @@
 
 
 body{
-    background-color: #1E1E1E;
+    background-color: #121212;
 }
 header{
     width: 100%;
@@ -35,10 +35,143 @@ header{
 
 
 
-.video-introducao{
-    background-color: #1E1E1E;
+.hero-section{
     width: 100%;
-    height: 65vh;
+    height: 80vh;
+    background-color: #121212;
+
+    
+}
+
+.container-hero-principal {
+    width: 100%;
+    /* height: 80%;  <-- Remova isso se você já tem height: 500px abaixo */
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 'left' não existe para align-items, use flex-start */
+    justify-content: center;
+    color: white;
+    font-family: "Inter", sans-serif;
+    
+    /* Configuração importante para o posicionamento do pseudo-elemento funcionar */
+    position: relative; 
+    
+    /* Cor de fundo que aparecerá "atrás" da imagem transparente */
+
+    
+    /* Garante que o texto fique acima do background */
+    z-index: 1; 
+
+}
+
+.container-hero-principal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Configurações da imagem */
+    background-image: url("../imagens/bg-sec-2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* AQUI aplicamos a opacidade somente na imagem */
+    opacity: 0.5;
+    
+    /* Coloca esse layer atrás do texto */
+    z-index: -1; 
+}
+
+.ancora-whatsapp-flutuante{
+    position: fixed;
+    bottom: 20px; /* Distância do fundo */
+    right: 10px;  /* Distância da direita */
+    z-index: 1000;
+   
+   
+    
+    
+}
+.logo-whats-flutuante{
+    width: 70px;
+    
+}
+
+
+.separador-hero-secao-1{
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    background-color: #121212;
+
+}
+
+.divisoria-hero{
+    width: 80px;
+    transform: rotate(180deg);
+    
+   
+    
+}
+.titulo-frase-principal{
+    margin-bottom: 50px;
+    margin-left: 14px ;
+    font-size: 32px;
+    box-shadow: #121212;
+
+    
+    
+}
+.secao-video-institucional{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+        font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+}
+
+
+.titulo-video-institucional{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 24px;
+
+}
+.paragrafo-frase-principal{
+    font-size: 18px;
+    margin-left: 14px;
+    width: 90%;
+}
+
+.ancora-hero-section{
+    width: 50%;
+    border: 2px solid #121212;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color:  #121212;
+    font-family: "Inter", sans-serif;
+    background-color: #009955;
+}
+
+
+.secao-video-institucional{
+    width: 100%;
+    height: 80vh;
+    background-color: #121212;
 }
 
 .secao-de-conteudo-1{
@@ -47,7 +180,10 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #1E1E1E;
+    background-color: #121212;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    
 }
 
 .titulo-secao-1{
@@ -59,7 +195,7 @@ header{
 
 .paragrafo-secao-1{
     font-family: "Inter", sans-serif;
-    margin-top: 25px;
+    margin-top: 5px;
     color: #FFFFFF;
     font-size: 13px;
     padding: 8px;
@@ -95,7 +231,7 @@ header{
 .secao-de-conteudo-2{
     width: 100%;
     height: 100vh;
-    background-color: #1E1E1E;
+    background-color: #121212;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,7 +239,7 @@ header{
 }
 
 .icone-de-carro{
-    width: 35px;
+    width: 45px;
     margin: 15px;
 }
 
@@ -177,13 +313,13 @@ header{
 
 
 .divisor-secao-2-3{
-    width: 100%;
+    width: 90%;
     height: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #1E1E1E;
+    background-color: #121212;
 }
 
 
@@ -191,15 +327,31 @@ header{
     width: 40px;
 }
 
-
-.introducao-planos{
+.divisoria-moto{
     width: 100%;
-    height: 35vh;
+    margin-bottom: 45px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    background-color: #1E1E1E;
+}
+.icone-moto{
+    width: 40px;
+    color: #FFFFFF;
+}
+
+
+.introducao-planos{
+    width: 90%;
+    height: 40vh;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    border: 1px solid #FFFFFF;
+    border-radius: 12px;
 }
 
 .titulo-introducao{
@@ -213,7 +365,7 @@ header{
     font-size: 16px;  
     padding: 5px;
     width: 65%;
-        color: white;
+    color: white;
 }
 
 
@@ -234,12 +386,23 @@ header{
 
 }
 
+.suporte-semaforo{
+    width: 100%;
+    margin-top: 80px;
+    
+}
 
-.introducao-planos{
+
+
+.introducao-planos-2{
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
+    height: 120vh;
+    background-color: #121212;
+    position: relative; /* Necessário para contexto */
+    
 }
 
 
@@ -252,7 +415,66 @@ header{
 }
 .semaforo-introducao{
     width: 175px;
-    border-top: 10px solid black;
+   
+}
+
+
+.titulo-introducao-planos{
+    margin-top: 80px;
+    text-align: left;
+    margin-left: 14px;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+.paragrafo-introducao-planos{
+    text-align: left;
+    margin-left: 14px;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    margin-top: 15px;
+}
+
+
+
+.semaforo-container {
+    position: relative;
+    width: 175px; /* Largura da sua imagem */
+    height: 300px; /* IMPORTANTE: Ajuste para a altura exata da sua imagem SVG */
+    margin-top: -110px; /* Ajuste conforme seu design */
+}
+
+/* Estilo comum para as duas imagens */
+.semaforo-img {
+    position: absolute; /* Faz elas boiarem uma em cima da outra */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1.2s ease-in-out; /* 1.2s é o tempo da transição (suavidade) */
+}
+
+/* Estado inicial: Vermelho visível, Verde invisível */
+.semaforo-img.vermelho {
+    opacity: 1;
+    z-index: 1;
+}
+
+.semaforo-img.verde {
+    opacity: 0;
+    z-index: 2; /* Fica por cima */
+}
+
+/* --- CLASSE ATIVADORA (Será adicionada pelo Javascript) --- */
+
+/* Quando a classe 'sinal-aberto' for adicionada ao container... */
+.semaforo-container.sinal-aberto .semaforo-img.vermelho {
+    opacity: 0; /* Vermelho some */
+}
+
+.semaforo-container.sinal-aberto .semaforo-img.verde {
+    opacity: 1; /* Verde aparece */
 }
 
 
@@ -271,12 +493,12 @@ header{
 
 
 
-
-
-
-
-
-
+.titulo-final-introducao{
+    margin-left: 14px;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    margin-top: 50px;
+}
 
 
 
@@ -287,7 +509,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 400px;
+    margin-top: 10px;
 }
 
 
@@ -298,7 +520,6 @@ header{
 .container-card-combo-basico{
     width: 90%;
     height: 468px;
-
     margin-top: 20px;
     display: flex;
     flex-direction: column;
