@@ -17,9 +17,47 @@
         
     </header>
 
-    <section class="video-introducao">
-        <video src="#" alt="video-introducoa"></video>
+    <section class="hero-section">
+        <div class="container-hero-principal">
+            <h1 class="titulo-frase-principal">Uma experiência de direção feita para você</h1>
+            <p class="paragrafo-frase-principal">Aulas personalizadas, veículos novos e paciência de sobra para você assumir o volante com segurança</p>
+            <a href="#" class="ancora-hero-section">FALE CONOSCO</a>
+             
+        </div>
     </section>
+
+
+    <div class="ancora-whatsapp-flutuante">
+        <img src="imagens/logo-whats-app-flutuante.svg" alt="Logo whats app" class="logo-whats-flutuante">
+    </div>
+
+
+
+
+
+    <div class="separador-hero-secao-1">
+        <img src="imagens/placa-siga-em-frente.svg" alt="Placa de transito" class="divisoria-hero">
+    </div>
+
+    <section class="secao-video-institucional">
+        <h2 class="titulo-video-institucional">Onde a teoria encontra a prática</h2>
+        <img src="imagens/capa-video.png" alt="" class="imagem-reproducao-video">
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <section class="secao-de-conteudo-1">
         <h2 class="titulo-secao-1">Sua Liberdade Começa aqui</h2>
@@ -42,7 +80,7 @@
             <div class="imagem-card">
 
             </div>
-            <img src="imagens/imagem-banner-cnh-do-brasil.png" alt="CNH do brasil" class="imagem-cnh-do-brasil">
+            <img src="imagens/banner-secao-cnh-do-brasil-parceria.png" alt="CNH do brasil" class="imagem-cnh-do-brasil">
 
 
 
@@ -59,36 +97,42 @@
         </div>
     </section>
 
+
+    <div class="divisoria-moto">
+        <img src="imagens/icone-moto.svg" alt="icone moto" class="icone-moto">
+    </div>
+
+
+
+
+<div class="introducao-planos">
     <div class="divisor-secao-2-3">
         <img src="imagens/placa-de-atencao.svg" alt="Icone de placa de atencao" class="placa-divisa">
     </div>
-    <div class="introducao-planos">
-        <h3 class="titulo-introducao">Sua CNH no seu ritmo</h3>
-        <p class="introducao-paragrafo">Sem pacotes engessados. Identifique seu nível de experiência e pague apenas pelo que você realmente precisa</p>
-        <a href="" class="ancora-introducao-planos">FALE CONOSCO</a>
+    
+    <h3 class="titulo-introducao">Sua CNH no seu ritmo</h3>
+    <p class="introducao-paragrafo">Sem pacotes engessados. Identifique seu nível de experiência e pague apenas pelo que você realmente precisa</p>
+    <a href="" class="ancora-introducao-planos">FALE CONOSCO</a>
+</div>
+
+
+
+<div class="introducao-planos-2" id="secao-semaforo"> 
+    <div class="suporte-semaforo">
+        <img src="imagens/suporte-teste.svg" alt="" class="suporte">
+    </div>
+    <div class="semaforo-container">
+        <img src="imagens/semaforo-luz-vermelha.svg.svg" alt="Semáforo Vermelho" class="semaforo-img vermelho">
+        
+        <img src="imagens/semaforo-luz-verde.svg.svg" alt="Semáforo Verde" class="semaforo-img verde">
     </div>
 
+    <h3 class="titulo-introducao-planos">Pague apenas pelo que você realmente precisa</h3>
+    <p class="paragrafo-introducao-planos">Nada de pacotes engessados ou taxas desnecessárias. Escolha o plano que melhor se adequa ao seu momento e ao seu objetivo</p>
 
 
-    <div class="introducao-planos">
-        <hr class="linha-semaforo">
-        <img src="imagens/semaforo-luz-verde.svg.svg" alt="Semaforo com a luz verde" class="semaforo-introducao">
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <h1 class="titulo-final-introducao">Conheça nossos combos:</h1>
+</div>
 
 
 
@@ -158,6 +202,39 @@
 
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        // Configurações do Observador
+        const options = {
+            root: null, // Observa a viewport (tela inteira)
+            rootMargin: '0px',
+            threshold: 0.5 // 0.5 significa: Ativar quando 50% do container estiver visível
+        };
 
+        // Função que roda quando o elemento aparece
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // Seleciona o container das imagens
+                const semaforoContainer = entry.target.querySelector('.semaforo-container');
+                
+                if (entry.isIntersecting) {
+                    // Se o usuário está vendo a seção, adiciona a classe que troca a cor
+                    semaforoContainer.classList.add('sinal-aberto');
+                } else {
+                    // (Opcional) Se o usuário subir a tela, volta para o vermelho?
+                    // Se quiser que a troca seja permanente, apague a linha abaixo.
+                    semaforoContainer.classList.remove('sinal-aberto');
+                }
+            });
+        }, options);
+
+        // Diz ao observador qual elemento vigiar
+        const secaoAlvo = document.querySelector('#secao-semaforo');
+        if (secaoAlvo) {
+            observer.observe(secaoAlvo);
+        }
+    });
+</script>
 </body>
 </html>
