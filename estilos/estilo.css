@@ -565,14 +565,14 @@ header {
 }
 
 /* Alternando posições na tela para o caminho passar por eles */
-.etapa-laranja { justify-content: flex-start; padding-left: 15%; }
-.etapa-azul { justify-content: flex-end; padding-right: 15%; }
-.etapa-verde { justify-content: flex-start; padding-left: 20%; }
+.etapa-laranja { justify-content: flex-start; padding-left: 15%; opacity: 0;}
+.etapa-azul { justify-content: flex-end; padding-right: 15%; opacity: 0;}
+.etapa-verde { justify-content: flex-start; padding-left: 20%; opacity: 0;}
 
 /* Cores dos quadrados */
-.cor-laranja { background-color: #feb859; }
-.cor-azul { background-color: #57c3ee; }
-.cor-verde { background-color: #39b88d; }
+.cor-laranja { background-color: #feb859; opacity: 0;}
+.cor-azul { background-color: #57c3ee; opacity: 0;}
+.cor-verde { background-color: #39b88d;opacity: 0; }
 
 
 /* Espaço final para fundir as cores no rodapé */
