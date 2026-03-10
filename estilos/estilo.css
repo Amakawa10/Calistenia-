@@ -1,68 +1,52 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-
-body{
+body {
     background-color: #121212;
+    overflow-x: hidden;
 }
-header{
+
+header {
     width: 100%;
     height: 15vh;
-
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    box-sizing: border-box;
     align-items: center;
-
 }
 
-.logo-menu-superior{
+.logo-menu-superior {
     width: 90px;
     margin-left: 20px;
-
 }
 
-.material-symbols-outlined{
-    width: 70px;
+.material-symbols-outlined {
+    font-size: 40px;
     margin-right: 20px;
     color: #1E1E1E;
-    
 }
 
-
-
-.hero-section{
+.hero-section {
     width: 100%;
-    height: 80vh;
     background-color: #121212;
-
-    
 }
 
 .container-hero-principal {
     width: 100%;
-    /* height: 80%;  <-- Remova isso se você já tem height: 500px abaixo */
     height: 500px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* 'left' não existe para align-items, use flex-start */
+    align-items: flex-start;
     justify-content: center;
     color: white;
     font-family: "Inter", sans-serif;
-    
-    /* Configuração importante para o posicionamento do pseudo-elemento funcionar */
-    position: relative; 
-    
-    /* Cor de fundo que aparecerá "atrás" da imagem transparente */
-
-    
-    /* Garante que o texto fique acima do background */
-    z-index: 1; 
-
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /* Mantém as animações dentro do container */
 }
 
 .container-hero-principal::before {
@@ -72,634 +56,518 @@ header{
     left: 0;
     width: 100%;
     height: 100%;
-    
-    /* Configurações da imagem */
     background-image: url("../imagens/bg-sec-2.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    /* AQUI aplicamos a opacidade somente na imagem */
     opacity: 0.5;
-    
-    /* Coloca esse layer atrás do texto */
-    z-index: -1; 
+    z-index: -1;
 }
 
-.ancora-whatsapp-flutuante{
-    position: fixed;
-    bottom: 20px; /* Distância do fundo */
-    right: 10px;  /* Distância da direita */
-    z-index: 1000;
-   
-   
-    
-    
-}
-.logo-whats-flutuante{
-    width: 70px;
-    
-}
-
-
-.separador-hero-secao-1{
-    width: 100%;
-    height: 12vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    align-items: center;
-    background-color: #121212;
-
-}
-
-.divisoria-hero{
-    width: 80px;
-    transform: rotate(180deg);
-    
-   
-    
-}
-.titulo-frase-principal{
-    margin-bottom: 50px;
-    margin-left: 14px ;
+/* =========================================
+   ANIMAÇÃO TEXTOS HERO SECTION
+========================================= */
+.titulo-frase-principal {
+    margin-bottom: 30px;
+    margin-left: 14px;
     font-size: 32px;
-    box-shadow: #121212;
-
-    
-    
-}
-.secao-video-institucional{
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-        font-family: "Inter", sans-serif;
-    color: #FFFFFF;
+    /* Configuração da animação */
+    opacity: 0;
+    animation: revealText 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-
-.titulo-video-institucional{
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 24px;
-
-}
-.paragrafo-frase-principal{
+.paragrafo-frase-principal {
     font-size: 18px;
     margin-left: 14px;
     width: 90%;
+    /* Delay para aparecer DEPOIS do título */
+    opacity: 0;
+    animation: revealText 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
 }
 
-.ancora-hero-section{
+.ancora-hero-section {
     width: 50%;
-    border: 2px solid #121212;
-    padding: 5px;
+    padding: 15px 5px;
     border-radius: 5px;
     text-decoration: none;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    color:  #121212;
+    color: #121212;
     font-family: "Inter", sans-serif;
     background-color: #009955;
+    font-weight: bold;
+    /* Delay para aparecer DEPOIS do parágrafo */
+    opacity: 0;
+    animation: fadeUp 1s ease 0.6s forwards;
 }
 
+/* Keyframes incríveis para o texto */
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
 
-.secao-video-institucional{
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ========================================= */
+
+.ancora-whatsapp-flutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.logo-whats-flutuante {
+    width: 70px;
+}
+
+.separador-hero-secao-1 {
     width: 100%;
-    height: 80vh;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #121212;
 }
 
-.secao-de-conteudo-1{
+.divisoria-hero {
+    width: 80px;
+    transform: rotate(180deg);
+}
+
+.secao-video-institucional {
     width: 100%;
-    height: 30vh;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    background-color: #121212;
+}
+
+.titulo-video-institucional {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.imagem-reproducao-video {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.secao-de-conteudo-1 {
+    width: 100%;
+    padding: 40px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #121212;
     font-family: "Inter", sans-serif;
     color: #FFFFFF;
-    
 }
 
-.titulo-secao-1{
-   font-family: "Inter", sans-serif;
-   margin-top: 10px;
-   color: #FFFFFF;
-   
+.titulo-secao-1 {
+    margin-top: 10px;
+    text-align: center;
 }
 
-.paragrafo-secao-1{
-    font-family: "Inter", sans-serif;
+.paragrafo-secao-1 {
     margin-top: 5px;
-    color: #FFFFFF;
-    font-size: 13px;
+    font-size: 14px;
     padding: 8px;
+    text-align: center;
 }
 
-
-.botao-chamada-1{
+.botao-chamada-1 {
     width: 80%;
+    max-width: 300px;
     background-color: #F9DB27;
-    height: 70px;
     margin-top: 30px;
     border-radius: 15px;
-    text-align: center;
     display: flex;
-    flex-direction: column;
-    justify-content: 
-    center;
-    padding: 5px 10px;
+    justify-content: center;
+    padding: 10px;
 }
-.ancora-secao-1-botao{
-    font-family: "Inter", sans-serif;
+
+.ancora-secao-1-botao {
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
     color: #1E1E1E;
-    background-color: #F9DB27;
+    width: 100%;
+    text-align: center;
     padding: 15px;
-    border-radius: 15px;
-    border: 5px solid black;
-
-    
+    border-radius: 10px;
+    border: 3px solid black;
 }
-.secao-de-conteudo-2{
+
+/* =========================================
+   LINHAS COM ÍCONES E ESPAÇAMENTOS
+========================================= */
+
+.secao-de-conteudo-2 {
     width: 100%;
-    height: 100vh;
+    padding: 60px 0; /* Aumentei o padding para dar respiro */
     background-color: #121212;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
-.icone-de-carro{
+/* Estrutura das linhas laterais */
+.linha-com-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 500px;
+    margin-bottom: 60px; /* Mesma distância que tem no padding do topo */
+}
+
+/* Linha da moto com equilíbrio de espaçamento acima e abaixo */
+.margin-moto {
+    margin: 60px auto; 
+}
+
+.linha-com-icone::before,
+.linha-com-icone::after {
+    content: "";
+    flex-grow: 1; /* Faz a linha ocupar todo o espaço vazio */
+    height: 1px;
+    background-color: #FFFFFF;
+    opacity: 0.3; /* Transparência para ficar sutil e elegante */
+}
+
+.linha-com-icone img {
     width: 45px;
-    margin: 15px;
+    margin: 0 20px; /* Distância entre o ícone e as linhas */
 }
 
-.cnh-do-brasil{
+/* ========================================= */
+
+.cnh-do-brasil {
     width: 90%;
-    height: 80%;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    border: 3px solid #FFFFFF;
+    border: 2px solid #FFFFFF;
     border-radius: 15px;
-    text-align: left;
     color: white;
-    box-sizing: border-box;
+    overflow: hidden;
 }
 
-
-.imagem-cnh-do-brasil{
+.imagem-cnh-do-brasil {
     width: 100%;
-    height: 30%;
-    border-top-left-radius: 10px ;
-    border-top-right-radius: 10px ;
+    height: auto;
 }
 
-
-
-
-
-.textos-cnh-do-brasil{
-    width: 100%;
-    height: 50%;
+.textos-cnh-do-brasil {
+    padding: 20px;
 }
 
-.titulo-card-cnh-do-brasil{
+.titulo-card-cnh-do-brasil {
     font-family: "Inter", sans-serif;
-    font-size: 28px;
-    padding: 10px;
-    margin: 15px;
+    font-size: 26px;
+    margin-bottom: 10px;
 }
 
-.paragrafo-cnh-do-brasil{
+.paragrafo-cnh-do-brasil {
     font-family: "Inter", sans-serif;
-    font-size: 20px;
-    padding: 10px;
-    margin: 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ccc;
 }
 
-
-
-.botoes-cta-secao-2{
-    width: 100%;
+.botoes-cta-secao-2 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 15px;
 }
-.ancora-cnh-do-brasil{
+
+.ancora-cnh-do-brasil {
     font-family: "Inter", sans-serif;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 12px;
     border: 1px solid #FFFFFF;
-    width: 60%;
-    margin: 10px;
+    width: 80%;
     text-align: center;
     text-decoration: none;
     color: white;
-    font-weight: 300;
-    border-radius: 12px;
-    
+    border-radius: 8px;
 }
 
-
-.divisor-secao-2-3{
-    width: 90%;
-    height: 10vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #121212;
-}
-
-
-.placa-divisa{
-    width: 40px;
-}
-
-.divisoria-moto{
+.divisor-secao-2-3 {
     width: 100%;
-    margin-bottom: 45px;
+    padding: 30px 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
-.icone-moto{
+
+.placa-divisa {
     width: 40px;
-    color: #FFFFFF;
 }
 
-
-.introducao-planos{
+.introducao-planos {
     width: 90%;
-    height: 40vh;
-    margin: 0px auto;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: #121212;
-    border: 1px solid #FFFFFF;
-    border-radius: 12px;
-}
-
-.titulo-introducao{
-      font-family: "Inter", sans-serif;
-    font-size: 24px;  
-        color: white;
-}
-
-.introducao-paragrafo{
-    font-family: "Inter", sans-serif;
-    font-size: 16px;  
-    padding: 5px;
-    width: 65%;
-    color: white;
-}
-
-
-
-
-.ancora-introducao-planos{
-    width: 50%;
-    text-decoration: none;
-    color: white;
     border: 1px solid #FFFFFF;
     border-radius: 12px;
     text-align: center;
-    height: 30px;
+}
+
+.titulo-introducao {
     font-family: "Inter", sans-serif;
-    padding: 3px;
-    margin: 5px 2px;
-    
-
+    font-size: 22px;
+    color: white;
+    margin-bottom: 10px;
 }
 
-.suporte-semaforo{
-    width: 100%;
-    margin-top: 80px;
-    
+.introducao-paragrafo {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    color: #ddd;
+    margin-bottom: 20px;
 }
 
+.ancora-introducao-planos {
+    width: 70%;
+    text-decoration: none;
+    color: white;
+    border: 1px solid #FFFFFF;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: "Inter", sans-serif;
+}
 
-
-.introducao-planos-2{
+.introducao-planos-2 {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 120vh;
+    padding-bottom: 60px;
     background-color: #121212;
-    position: relative; /* Necessário para contexto */
-    
 }
 
-
-.linha-semaforo{
-    width: 100%;
-    height: 5px;
-    color: white;
-    margin: 0px;
-
+.suporte-semaforo {
+    margin-top: 50px;
 }
-.semaforo-introducao{
-    width: 175px;
-   
-}
-
-
-.titulo-introducao-planos{
-    margin-top: 80px;
-    text-align: left;
-    margin-left: 14px;
-    font-family: "Inter", sans-serif;
-    color: #FFFFFF;
-    font-size: 24px;
-}
-
-.paragrafo-introducao-planos{
-    text-align: left;
-    margin-left: 14px;
-    font-family: "Inter", sans-serif;
-    color: #FFFFFF;
-    margin-top: 15px;
-}
-
-
 
 .semaforo-container {
     position: relative;
-    width: 175px; /* Largura da sua imagem */
-    height: 300px; /* IMPORTANTE: Ajuste para a altura exata da sua imagem SVG */
-    margin-top: -110px; /* Ajuste conforme seu design */
+    width: 150px; 
+    height: 250px; 
+    margin-top: -80px; 
 }
 
-/* Estilo comum para as duas imagens */
 .semaforo-img {
-    position: absolute; /* Faz elas boiarem uma em cima da outra */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    transition: opacity 1.2s ease-in-out; /* 1.2s é o tempo da transição (suavidade) */
+    transition: opacity 1s ease-in-out;
 }
 
-/* Estado inicial: Vermelho visível, Verde invisível */
-.semaforo-img.vermelho {
-    opacity: 1;
-    z-index: 1;
+.semaforo-img.vermelho { opacity: 1; z-index: 1; }
+.semaforo-img.verde { opacity: 0; z-index: 2; }
+.semaforo-container.sinal-aberto .semaforo-img.vermelho { opacity: 0; }
+.semaforo-container.sinal-aberto .semaforo-img.verde { opacity: 1; }
+
+.titulo-introducao-planos {
+    margin-top: 40px;
+    text-align: center;
+    padding: 0 20px;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    font-size: 22px;
 }
 
-.semaforo-img.verde {
-    opacity: 0;
-    z-index: 2; /* Fica por cima */
+.paragrafo-introducao-planos {
+    text-align: center;
+    padding: 0 20px;
+    font-family: "Inter", sans-serif;
+    color: #ccc;
+    margin-top: 15px;
 }
 
-/* --- CLASSE ATIVADORA (Será adicionada pelo Javascript) --- */
-
-/* Quando a classe 'sinal-aberto' for adicionada ao container... */
-.semaforo-container.sinal-aberto .semaforo-img.vermelho {
-    opacity: 0; /* Vermelho some */
-}
-
-.semaforo-container.sinal-aberto .semaforo-img.verde {
-    opacity: 1; /* Verde aparece */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.titulo-final-introducao{
-    margin-left: 14px;
+.titulo-final-introducao {
     font-family: "Inter", sans-serif;
     color: #FFFFFF;
     margin-top: 50px;
+    text-align: center;
 }
 
-
-
-.planos{
+.planos {
     background-color: #121212;
     width: 100%;
-    height: 350vh;
+    padding: 50px 0; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
+    gap: 60px; 
+    overflow: hidden; 
 }
 
-
-
-
-
-
-.container-card-combo-basico{
+.card-combo {
     width: 90%;
-    height: 468px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 380px;
     background-color: #1E1E24;
     border-radius: 12px;
-    box-shadow: 10px 10px 6px 0.5 #005BD3;
-}
-
-.bandeira-combo-basico{
-    width: 80%;
-    border: 1px solid #005BD3;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    margin-left: 0px;
-    align-items: center;
-    background-color: #005BD3;
-    
-
-}
-
-
-
-
-.container-card-combo-intermediario{
-    width: 90%;
-    height: 468px;
- 
-    margin-top: 20px;
+    position: relative; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #1E1E24;
-    border-radius: 12px;
-    box-shadow: 10px 10px 2px #009955;
-    margin-top: 50px;
+    padding-bottom: 40px;
+    box-shadow: none;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                opacity 0.8s ease, 
+                box-shadow 1s ease-in-out; 
 }
 
-.bandeira-combo-intermediario{
-    width: 80%;
-    border: 1px solid #009955;
-    height: auto;
+.anime-left {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+.anime-right {
+    opacity: 0;
+    transform: translateX(100px);
+}
+.card-combo.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.bandeira-base {
+    position: absolute;
+    top: 30px;
+    left: 0; 
+    width: 80%; 
+    height: 50px;
     display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    margin-left: 0px;
     align-items: center;
-    background-color: #009955;
- 
-    
-
+    padding-left: 15px;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
 }
 
-
-.container-card-combo-avancado{
-    width: 90%;
-    height: 468px;
- 
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #1E1E24;
-    border-radius: 12px;
-    box-shadow: 10px 10px 2px #F2A900;
-    margin-top: 50px;
+.imagem-icone-bandeira {
+    width: 25px;
+    margin-right: 15px;
 }
 
-.bandeira-combo-avancado{
-    width: 80%;
-    border: 1px solid #F2A900;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    margin-left: 0px;
-    align-items: center;
-    background-color: #F2A900;
-    
-
-}
-
-
-
-
-
-.container-card-combo-expert{
-    width: 90%;
-    height: 468px;
-
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #1E1E24;
-    border-radius: 12px;
-    box-shadow: 10px 10px 2px #D90F0F;
-    margin-top: 50px;
-}
-
-.bandeira-combo-expert{
-    width: 80%;
-    border: 1px solid #D90F0F;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    margin-left: 0px;
-    align-items: center;
-    background-color: #D90F0F;
-    
-
-}
-
-
-
-
-
-
-.imagem-card{
-    width: 40px;
-}
-
-
-
-.titulocard{
+.titulocard {
     font-family: "Inter", sans-serif;
     color: #FFFFFF;
-    margin-left: 30px;
-}
-.foco-letra{
-        font-family: "Inter", sans-serif;
-        font-size: 96px;
-            color: #FFFFFF;
-            margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.2;
 }
 
-.descricao-aula{
-            font-family: "Inter", sans-serif;
-        font-size: 48px;
-            color: #FFFFFF;
-            margin-top: 0px;
+.bg-azul { background-color: #005BD3; }
+.bg-verde { background-color: #009955; }
+.bg-amarelo { background-color: #F2A900; }
+.bg-vermelho { background-color: #D90F0F; }
+
+.selo-destaque {
+    position: absolute;
+    top: 10px;
+    right: -10px; 
+    width: 80px;
+    z-index: 10;
 }
 
-.descricao-card{
-    width: 70%;
-    margin: 10px auto;
-    text-align: center;
-                font-family: "Inter", sans-serif;
-                            color: #FFFFFF;
-                                        margin-top: 20px;
-}
-
-
-.ancora-card{
-                font-family: "Inter", sans-serif;
-                color: #FFFFFF;
-                 border: 1px solid #FFFFFF;
-                 margin-top: 30px;
-                 width: 70%;
-                 padding: 3px;
-                 letter-spacing: 2px;
-                 text-align: center;
-                 border-radius: 18px;
-                 text-decoration: none;
-}
-
-
-.final-planos-divisoria{
-
-    width: 100%;
-    height: 20vh;
+.conteudo-card {
+    margin-top: 100px; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
+    align-items: center;
+    width: 100%;
 }
 
-.imagem-divisoria-fim-planos{
+.foco-letra {
+    font-family: "Inter", sans-serif;
+    font-size: 96px;
+    color: #FFFFFF;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.descricao-aula {
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    color: #FFFFFF;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.descricao-card {
+    width: 80%;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    color: #cccccc;
+    font-size: 14px;
+    margin-top: 20px;
+    min-height: 60px; 
+}
+
+.ancora-card {
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    margin-top: 30px;
+    width: 60%;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.ancora-card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#card-basico.blur-ativo { box-shadow: 10px 10px 25px -5px rgba(0, 91, 211, 0.25); }
+#card-intermediario.blur-ativo { box-shadow: 10px 10px 25px -5px rgba(0, 153, 85, 0.25); }
+#card-avancado.blur-ativo { box-shadow: 10px 10px 25px -5px rgba(242, 169, 0, 0.25); }
+#card-expert.blur-ativo { box-shadow: 10px 10px 25px -5px rgba(217, 15, 15, 0.25); }
+
+.final-planos-divisoria {
     width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.imagem-divisoria-fim-planos {
+    width: 80%;
+    max-width: 400px;
 }
