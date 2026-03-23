@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Médica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Boa prática para evitar problemas de largura */
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    background-color: #4bb848;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo-cabecalho {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    color: white; /* Adicionei cor branca para destacar no fundo verde, sinta-se à vontade para mudar */
+}
+
+.container-principal {
+    width: 100%;
+    height: 90vh; /* Alterado de height para min-height para a tela poder rolar se necessário */
+    background-color: #faf5f0;
+    padding-bottom: 50px; /* Um espaço extra no final da tela */
+}
+
+.informacoes-basicas-do-cliente {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 5vh;
+    padding-left: 14px;
+    font-weight: 200;
+    
+    /* TRUQUE DA MARCA D'ÁGUA: */
+    position: relative; /* Necessário para ancorar o fundo (::before) */
+    z-index: 1; /* Garante que a seção fique acima do fundo */
+}
+
+/* Criando uma camada separada APENAS para a imagem de fundo */
+.informacoes-basicas-do-cliente::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Configurações da sua imagem */
+    background-image: url("../imagens/icone-fundo.svg");
+    background-repeat: no-repeat;
+    background-position: right bottom; 
+    
+    /* Mudei de cover para 50% ou 'contain'. 'Cover' pode esticar e cortar o ícone. Teste o que fica melhor! */
+    background-size: 40%; 
+    
+    /* Opacidade aplicada SOMENTE ao ícone */
+    opacity: 0.25; /* Recomendo entre 0.1 e 0.2 para marca d'água médica */
+    
+    /* Joga a imagem para trás do texto e evita que ela bloqueie o mouse */
+    z-index: -1; 
+    pointer-events: none;
+}
+
+.container-informacoes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px; /* Adicionado um pequeno respiro entre as linhas */
+}
+
+.informacoes-basicas-do-cliente-secao-1 {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold; /* Deixei os títulos em negrito para contrastar com as respostas */
+}
+
+.informacoes-basicas-do-cliente-secao-1-resposta {
+    font-family: 'Inter', sans-serif;
+    margin-left: 8px;
+    margin-top: 15px;
+    font-weight: 400; /* Levemente mais forte para facilitar a leitura */
+    color: #333;
+}
+
+.informacoes-complementares-secao-2 {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.informacoes-complementares-secao-2-resposta {
+    font-family: 'Inter', sans-serif;
+    margin-top: 15px;
+    margin-left: 8px;
+    font-weight: 400;
+    color: #333;
+}
+    
+  </style>
+</head>
+<body>
+    <header>
+        <h1 class="titulo-cabecalho">Info Tag</h1>
+    </header>
+
+    <div class="container-principal">
+        <section class="informacoes-basicas-do-cliente">
+            <div class="container-informacoes">
+                <h2 class="informacoes-basicas-do-cliente-secao-1">Nome:</h2>
+                <p class="informacoes-basicas-do-cliente-secao-1-resposta">Crislaine Oliveira</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-basicas-do-cliente-secao-1">N° do cartão do SUS:</h2>
+                <p class="informacoes-basicas-do-cliente-secao-1-resposta">566515321</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-basicas-do-cliente-secao-1">Convênio Unimed:</h2>
+                <p class="informacoes-basicas-do-cliente-secao-1-resposta">566515321</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-basicas-do-cliente-secao-1">Telefone:</h2>
+                <p class="informacoes-basicas-do-cliente-secao-1-resposta">566515321</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-basicas-do-cliente-secao-1">N° de Emergência:</h2>
+                <p class="informacoes-basicas-do-cliente-secao-1-resposta">19 9 9141-3388</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-basicas-do-cliente-secao-1">Data de Nascimento:</h2>
+                <p class="informacoes-basicas-do-cliente-secao-1-resposta">11/02/1996</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-basicas-do-cliente-secao-1">Cidade:</h2>
+                <p class="informacoes-basicas-do-cliente-secao-1-resposta">Conchal-SP</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-basicas-do-cliente-secao-1">CEP:</h2>
+                <p class="informacoes-basicas-do-cliente-secao-1-resposta">13835-031</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-basicas-do-cliente-secao-1">Altura:</h2>
+                <p class="informacoes-basicas-do-cliente-secao-1-resposta">1,67 m</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-basicas-do-cliente-secao-1">Peso:</h2>
+                <p class="informacoes-basicas-do-cliente-secao-1-resposta">67 Kg</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-complementares-secao-2">Tipagem Sanguínea:</h2>
+                <p class="informacoes-complementares-secao-2-resposta">B+</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-complementares-secao-2">Comorbidades:</h2>
+                <p class="informacoes-complementares-secao-2-resposta">Nenhuma</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-complementares-secao-2">Medicamentos Controlados:</h2>
+                <p class="informacoes-complementares-secao-2-resposta">Nenhum</p>
+            </div>
+
+            <div class="container-informacoes">
+                <h2 class="informacoes-complementares-secao-2">Alergias:</h2>
+                <p class="informacoes-complementares-secao-2-resposta">Nenhuma</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
